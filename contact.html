@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact page to reach out for inquiries and questions.">
+    <meta name="author" content="Adeniran Adelosoye">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel ="icon" href="favicon.jpg" type="image/jpg">
+</head>
+<body>
+     <section class="navigation">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+        </section>
+    <h1>Contact Me</h1>
+    <section class="contact-form">
+        <p>If you have any questions or inquiries, feel free to reach out using the form below. I look forward to hearing from you!</p>
+        <form action="submit_form.php" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="subject">Subject:</label><br>
+            <input type="text" id="subject" name="subject" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    <br> 
+
+    <div id ="thankyou-message" class="popup ">
+        <div class="popup-content">
+            <p>Thanks for your messages!</p>
+            <button id="closepopup">Close</button>
+        </div>
+    </div>
+    <br><br><br>
+    <section class="footer">
+    <footer>
+    <p> Copyright &copy; Adeniran Adelosoye 2025. All rights reserved.</p>
+    </footer>
+    </section>
+
+    <script>
+        const form = document.querySelector('.contact-form form');
+        const popup = document.getElementById('thankyou-message');
+        const closePopup= document.getElementById('closepopup');
+
+        form.addEventListener('submit', function(event) 
+        {
+            event.preventDefault();
+            popup.style.display = 'flex';
+            form.reset();
+        });
+        closePopup.addEventListener('click', function() 
+        {
+            popup.style.display = 'none';
+        });
+           
+    </script>
+</body>
+</html>
